@@ -26,6 +26,7 @@ export default {
         n = 20000,
         i = 0;
 
+
     var interval = setInterval(function() {
       if (i < n) {
         for (var k = 0; k < 20; k += 1) {
