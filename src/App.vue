@@ -9,7 +9,6 @@
 export default {
   name: 'App',
   mounted() {
-    
     var canvas = document.getElementById('canvas'),
         context = canvas.getContext('2d'),
         c = 28, 
