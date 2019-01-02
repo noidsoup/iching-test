@@ -9,33 +9,31 @@
 export default {
   name: 'App',
   mounted() {
-    var canvas = document.getElementById('canvas'),
-        context = canvas.getContext('2d'),
-        c = 28, 
-        h = 0.015,
-        t = -6,
-        x0 = 0, 
-        y0 = 1, 
-        z0 = 10,
-        x1,
-        y1,
-        z1,
-        cx = 250,
-        cy = 330,
-        scale = 15,
-        n = 20000,
-        i = 0;
-
-
-    var interval = setInterval(function() {
+    const canvas = document.getElementById('canvas');
+    const context = canvas.getContext('2d');
+    let x1;
+    let y1;
+    let z1;
+    const n = 20000;
+    const scale = 15;
+    const cx = 250;
+    const cy = 330;
+    const c = 28;
+    const h = 0.015;
+    const t = -6;
+    let i = 0;
+    let x0 = 0;
+    let y0 = 1;
+    let z0 = 10;
+    const interval = setInterval(() => {
+      let k;
       if (i < n) {
-        for (var k = 0; k < 20; k += 1) {
-          x1 = x0 + h * t * (x0 - y0);
-          y1 = y0 + h * (-x0 * z0 + c * x0 - y0);
-          z1 = z0 + h * (x0 * y0 - z0);
+        for (k = 0; k < 20; k += 1) {
+          x1 = x0 + (h * t * (x0 - y0));
+          y1 = y0 + (h * (-x0 * z0 + c * x0 - y0));
+          z1 = z0 + (h * (x0 * y0 - z0));
 
-          context.strokeStyle = "hsl(0, 100%, 50%)";
-          
+          context.strokeStyle = 'hsl(0, 100%, 50%)';
           context.beginPath();
           context.moveTo(cx + x0 * scale, cy + y0 * scale);
           context.lineTo(cx + x1 * scale, cy + y1 * scale);
@@ -51,7 +49,7 @@ export default {
         clearInterval(interval);
       }
     }, 60);
-  }
+  },
 };
 </script>
 
