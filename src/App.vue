@@ -12,6 +12,7 @@ export default {
     // A simple Lorenz Attractor renderer
     // Change the parameters for different results!
     // by @liabru - http://brm.io
+    
     var canvas = document.getElementById('canvas'),
         context = canvas.getContext('2d'),
         c = 28, 
