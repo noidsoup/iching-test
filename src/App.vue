@@ -9,46 +9,47 @@
 export default {
   name: 'App',
   mounted() {
-    const canvas = document.getElementById('canvas');
-    const context = canvas.getContext('2d');
-    let x1;
-    let y1;
-    let z1;
-    const n = 20000;
-    const scale = 15;
-    const cx = 250;
-    const cy = 330;
-    const c = 28;
-    const h = 0.015;
-    const t = -6;
-    let i = 0;
-    let x0 = 0;
-    let y0 = 1;
-    let z0 = 10;
-    const interval = setInterval(() => {
-      let k;
-      if (i < n) {
-        for (k = 0; k < 20; k += 1) {
-          x1 = x0 + (h * t * (x0 - y0));
-          y1 = y0 + (h * (-x0 * z0 + c * x0 - y0));
-          z1 = z0 + (h * (x0 * y0 - z0));
-
-          context.strokeStyle = 'hsl(0, 100%, 50%)';
-          context.beginPath();
-          context.moveTo(cx + x0 * scale, cy + y0 * scale);
-          context.lineTo(cx + x1 * scale, cy + y1 * scale);
-          context.stroke();
-
-          x0 = x1;
-          y0 = y1;
-          z0 = z1;
-
-          i += 1;
-        }
-      } else {
-        clearInterval(interval);
+    let forwardTimes = []
+    let withBoxes = true
+    function onChangeHideBoundingBoxes(e) {
+      withBoxes = !$(e.target).prop('checked')
+    }
+    function updateTimeStats(timeInMs) {
+      forwardTimes = [timeInMs].concat(forwardTimes).slice(0, 30)
+      const avgTimeInMs = forwardTimes.reduce((total, t) => total + t) / forwardTimes.length
+      $('#time').val(`${Math.round(avgTimeInMs)} ms`)
+      $('#fps').val(`${faceapi.round(1000 / avgTimeInMs)}`)
+    }
+    async function onPlay() {
+      const videoEl = $('#inputVideo').get(0)
+      if(videoEl.paused || videoEl.ended || !isFaceDetectionModelLoaded())
+        return setTimeout(() => onPlay())
+      const options = getFaceDetectorOptions()
+      const ts = Date.now()
+      const result = await faceapi.detectSingleFace(videoEl, options).withFaceExpressions()
+      updateTimeStats(Date.now() - ts)
+      if (result) {
+        drawExpressions(videoEl, $('#overlay').get(0), [result], withBoxes)
       }
-    }, 60);
+      setTimeout(() => onPlay())
+    }
+    async function run() {
+      // load face detection and face expression recognition models
+      await changeFaceDetector(TINY_FACE_DETECTOR)
+      await faceapi.loadFaceExpressionModel('/')
+      changeInputSize(224)
+      // try to access users webcam and stream the images
+      // to the video element
+      const stream = await navigator.mediaDevices.getUserMedia({ video: {} })
+      const videoEl = $('#inputVideo').get(0)
+      videoEl.srcObject = stream
+    }
+    function updateResults() {}
+    $(document).ready(function() {
+      renderNavBar('#navbar', 'webcam_face_expression_recognition')
+      initFaceDetectionControls()
+      run()
+    })
   },
 };
 </script>
