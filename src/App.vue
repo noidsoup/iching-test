@@ -1,80 +1,76 @@
 <template>
-  <div>
-    <canvas id="canvas" width="500" height="660"></canvas>
-  </div>
+  <v-app id="inspire" dark>
+    <v-navigation-drawer
+      v-model="drawer"
+      clipped
+      fixed
+      app
+    >
+      <v-list dense>
+        <v-list-tile @click="">
+          <v-list-tile-action>
+            <v-icon>dashboard</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Dashboard</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-list-tile @click="">
+          <v-list-tile-action>
+            <v-icon>settings</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Settings</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
+    </v-navigation-drawer>
+    <v-toolbar app fixed clipped-left>
+      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+      <v-toolbar-title>i ching: the book of changes</v-toolbar-title>
+    </v-toolbar>
+    <v-content>
+      <v-container fluid fill-height>
+        <v-layout justify-center align-center>
+          <v-flex shrink>
+              <h1 class="hexagram">{{hexagram.hexagram}}</h1>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
+import hexagrams from '../static/hexagrams.json';
 
 export default {
-  name: 'App',
+  data: () => ({
+    drawer: false,
+    hexagram: null,
+  }),
   mounted() {
-    let forwardTimes = []
-    let withBoxes = true
-    function onChangeHideBoundingBoxes(e) {
-      withBoxes = !$(e.target).prop('checked')
+    /**
+     * Get a random integer between `min` and `max`.
+     * 
+     * @param {number} min - min number
+     * @param {number} max - max number
+     * @return {number} a random integer
+     */
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
     }
-    function updateTimeStats(timeInMs) {
-      forwardTimes = [timeInMs].concat(forwardTimes).slice(0, 30)
-      const avgTimeInMs = forwardTimes.reduce((total, t) => total + t) / forwardTimes.length
-      $('#time').val(`${Math.round(avgTimeInMs)} ms`)
-      $('#fps').val(`${faceapi.round(1000 / avgTimeInMs)}`)
-    }
-    async function onPlay() {
-      const videoEl = $('#inputVideo').get(0)
-      if(videoEl.paused || videoEl.ended || !isFaceDetectionModelLoaded())
-        return setTimeout(() => onPlay())
-      const options = getFaceDetectorOptions()
-      const ts = Date.now()
-      const result = await faceapi.detectSingleFace(videoEl, options).withFaceExpressions()
-      updateTimeStats(Date.now() - ts)
-      if (result) {
-        drawExpressions(videoEl, $('#overlay').get(0), [result], withBoxes)
-      }
-      setTimeout(() => onPlay())
-    }
-    async function run() {
-      // load face detection and face expression recognition models
-      await changeFaceDetector(TINY_FACE_DETECTOR)
-      await faceapi.loadFaceExpressionModel('/')
-      changeInputSize(224)
-      // try to access users webcam and stream the images
-      // to the video element
-      const stream = await navigator.mediaDevices.getUserMedia({ video: {} })
-      const videoEl = $('#inputVideo').get(0)
-      videoEl.srcObject = stream
-    }
-    function updateResults() {}
-    $(document).ready(function() {
-      renderNavBar('#navbar', 'webcam_face_expression_recognition')
-      initFaceDetectionControls()
-      run()
-    })
+
+    const random_hexagram = getRandomInt('1', '111111');
+
+    this.hexagram = hexagrams[0]['000000'];
+    console.log(this.hexagram);
   },
 };
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-body {
-  background: #18181d;
-  text-align: center;
-}
-
-canvas {
-  display: inline-block;
-  max-width: 100%;
-  max-height: 100%;
-}
-body {
-  background: black;
+.hexagram {
+    font-size: 40em;
 }
 </style>
