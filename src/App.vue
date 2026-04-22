@@ -1,76 +1,75 @@
 <template>
-  <v-app id="inspire" dark>
+  <v-app>
     <v-navigation-drawer
       v-model="drawer"
-      clipped
-      fixed
-      app
+      location="start"
+      temporary
     >
-      <v-list dense>
-        <v-list-tile @click="">
-          <v-list-tile-action>
-            <v-icon>dashboard</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Dashboard</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-        <v-list-tile @click="">
-          <v-list-tile-action>
-            <v-icon>settings</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Settings</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
+      <v-list nav density="comfortable">
+        <v-list-item @click="tab = 'oracle'">
+          <template #prepend>
+            <v-icon icon="mdi-yin-yang" />
+          </template>
+          <v-list-item-title>Oracle</v-list-item-title>
+        </v-list-item>
+        <v-list-item @click="tab = 'browse'">
+          <template #prepend>
+            <v-icon icon="mdi-shuffle" />
+          </template>
+          <v-list-item-title>Random hexagram</v-list-item-title>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar app fixed clipped-left>
-      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title>i ching: the book of changes</v-toolbar-title>
-    </v-toolbar>
-    <v-content>
-      <v-container fluid fill-height>
-        <v-layout justify-center align-center>
-          <v-flex shrink>
-              <h1 class="hexagram">{{hexagram.hexagram}}</h1>
-          </v-flex>
-        </v-layout>
+
+    <v-app-bar color="surface" elevation="1">
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <v-app-bar-title>I Ching: The Book of Changes</v-app-bar-title>
+    </v-app-bar>
+
+    <v-main>
+      <v-container fluid class="py-6 py-md-8">
+        <v-tabs v-model="tab" class="mb-6" color="primary" align-tabs="center">
+          <v-tab value="oracle" prepend-icon="mdi-yin-yang">Oracle</v-tab>
+          <v-tab value="browse" prepend-icon="mdi-shuffle">Browse</v-tab>
+        </v-tabs>
+
+        <v-window v-model="tab">
+          <v-window-item value="oracle">
+            <IChingOracle />
+          </v-window-item>
+          <v-window-item value="browse">
+            <v-sheet class="mx-auto pa-4 pa-md-6 text-center" max-width="720" rounded="lg" border>
+              <p class="text-body-2 text-medium-emphasis mb-4">
+                This draws a hexagram uniformly at random from the 64 King Wen figures. It is not a divination cast.
+              </p>
+              <v-btn class="mb-6" color="primary" @click="shuffle">Draw at random</v-btn>
+              <HexagramPanel v-if="browseHex" :entry="browseHex" />
+            </v-sheet>
+          </v-window-item>
+        </v-window>
       </v-container>
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 
-<script>
-import hexagrams from '../static/hexagrams.json';
+<script setup>
+import { ref, onMounted } from 'vue';
+import { pickRandomHexagram } from '@/hexagrams.js';
+import IChingOracle from '@/components/IChingOracle.vue';
+import HexagramPanel from '@/components/HexagramPanel.vue';
 
-export default {
-  data: () => ({
-    drawer: false,
-    hexagram: null,
-  }),
-  mounted() {
-    /**
-     * Get a random integer between `min` and `max`.
-     * 
-     * @param {number} min - min number
-     * @param {number} max - max number
-     * @return {number} a random integer
-     */
-    function getRandomInt(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) + min);
-    }
+const drawer = ref(false);
+const tab = ref('oracle');
+const browseHex = ref(null);
 
-    const random_hexagram = getRandomInt('1', '111111');
+function shuffle() {
+  browseHex.value = pickRandomHexagram();
+}
 
-    this.hexagram = hexagrams[0]['000000'];
-    console.log(this.hexagram);
-  },
-};
+onMounted(() => {
+  browseHex.value = pickRandomHexagram();
+});
 </script>
 
-<style>
-.hexagram {
-    font-size: 40em;
-}
+<style scoped>
 </style>

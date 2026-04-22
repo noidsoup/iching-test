@@ -1,27 +1,25 @@
 # being
 
-> A Vue.js project
+I Ching (“Book of Changes”) — a small **Vue 3** + **Vuetify 3** app bundled with **Vite**.
 
-## Build Setup
+Hexagram copy and glyphs live in `src/assets/hexagrams.json`. Each load picks a random hexagram and shows its definition and judgment text.
 
-``` bash
-# install dependencies
+## Setup
+
+```bash
 npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run all tests
-npm test
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## Scripts
+
+```bash
+npm run dev      # Vite dev server (default http://localhost:5173)
+npm run build    # Production build → dist/
+npm run preview  # Preview production build locally
+npm test         # Vitest unit tests
+npm run lint     # ESLint (flat config)
+```
+
+## Requirements
+
+Node **18+** recommended (see `package.json` `engines`).

@@ -1,11 +1,11 @@
 .DS_Store
+.env
+uncommitted/
 node_modules/
 /dist/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-/test/unit/coverage/
-
 # Editor directories and files
 .idea
 .vscode

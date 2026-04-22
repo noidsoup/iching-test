@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "preserve",
+    "strict": false
+  },
+  "include": ["src/**/*.vue", "src/**/*.js", "tests/**/*.js", "vite.config.js"],
+  "exclude": ["node_modules", "dist"]
+}
