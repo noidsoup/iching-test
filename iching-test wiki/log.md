@@ -37,4 +37,4 @@ Re-applied project AI baseline: SimpleMem store moved to **`docs/simplemem/`** (
 
 ## [2026-05-10] session | Close-out (oracle UI + reference PDF)
 
-Branch **`chore/close-out-2026-05-10`**: oracle-related Vue updates, smoke test tweak, **`docs/reference/`** Wilhelm PDF + runbook source/copyright note; session memory + SimpleMem CLI update. PR targets **`master`** (squash).
+Merged **[PR #7](https://github.com/noidsoup/iching-test/pull/7)** (squash) into **`master`**: oracle-related Vue updates, smoke test tweak, **`docs/reference/`** Wilhelm PDF + runbook source/copyright note; session memory + SimpleMem CLI update.

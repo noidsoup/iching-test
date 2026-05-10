@@ -6,10 +6,9 @@ Import into SimpleMem (optional): `python3 simplemem_cli.py import-ai-session --
 
 ## [2026-05-10] session close-out | Oracle UI, reference PDF, handoff
 
-- **Branch:** `chore/close-out-2026-05-10` → PR into **`master`** (squash-merge when green).
-- **Ships:** **Vue oracle / line-stack UI** updates (`HexagramPanel`, `IChingOracle`, `LineStack`), **`Oracle.smoke.spec.js`** tweaks, **`AI_RUNBOOK.md`** + **`docs/reference/Wilhelm_The_I_Ching_or_Book_of_Changes_abridged.pdf`** (~530 KB offline Wilhelm abridged; source + copyright note in runbook), wiki **`log.md`** touch-up.
-- **Baseline:** AI refresh already on `master` as `efc6594` (this branch stacks on top).
-- **Verification (pre-push):** `npm run lint`, `npm test`, `npm run build`.
+- **Merged:** [PR #7](https://github.com/noidsoup/iching-test/pull/7) (squash) → **`master`** at **`49665de`**.
+- **Included:** **Vue oracle / line-stack UI** updates (`HexagramPanel`, `IChingOracle`, `LineStack`), **`Oracle.smoke.spec.js`** tweaks, **`AI_RUNBOOK.md`** + **`docs/reference/Wilhelm_The_I_Ching_or_Book_of_Changes_abridged.pdf`** (~530 KB offline Wilhelm abridged; source + copyright note in runbook), wiki **`log.md`**, SimpleMem **`docs/simplemem/memories.json`**, plus the earlier AI readiness files (Context7, CrewAI stub, `docs/simplemem/`, etc.) that landed in the same integration window.
+- **Verification:** `npm run lint`, `npm test`, `npm run build` before merge.
 - **Next (optional):** enable SimpleMem in `.env`; add GitHub Actions when desired.
 
 ## [2026-05-10] AI setup refresh
