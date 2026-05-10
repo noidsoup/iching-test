@@ -3,7 +3,15 @@ import pluginVue from 'eslint-plugin-vue';
 import globals from 'globals';
 
 export default [
-  { ignores: ['dist/**', 'node_modules/**', 'iching-test wiki/**'] },
+  {
+    ignores: [
+      'dist/**',
+      'node_modules/**',
+      'iching-test wiki/**',
+      'crewai/.venv/**',
+      'crewai/planner/.venv/**',
+    ],
+  },
   js.configs.recommended,
   ...pluginVue.configs['flat/essential'],
   {

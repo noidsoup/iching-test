@@ -20,7 +20,7 @@ describe('IChingOracle.vue (smoke)', () => {
     expect(castBtn).toBeTruthy();
     await castBtn.trigger('click');
     await flushPromises();
-    expect(wrapper.text()).toContain('Primary');
+    expect(wrapper.text()).toContain('Primary hexagram');
     expect(wrapper.findAll('.hex-panel').length).toBeGreaterThan(0);
   });
 
@@ -30,6 +30,6 @@ describe('IChingOracle.vue (smoke)', () => {
     await flushPromises();
     await wrapper.findAll('button').find((b) => b.text() === 'Clear')?.trigger('click');
     await flushPromises();
-    expect(wrapper.text()).not.toContain('Primary');
+    expect(wrapper.text()).not.toContain('Primary hexagram');
   });
 });

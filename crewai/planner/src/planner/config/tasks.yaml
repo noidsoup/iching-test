@@ -1,0 +1,21 @@
+research_task:
+  description: >
+    Analyze this implementation request for the iching-test repository: {task_description}
+    Summarize scope, likely Vue/Vuetify files or tests to touch, risks, and unknowns.
+    Reference the stack: Vue 3, Vite 5, Vuetify 3, Vitest, ESLint 9, static data in
+    src/assets/hexagrams.json. No backend or database.
+  expected_output: >
+    Markdown with sections: Scope, Files & areas, Risks, Open questions (use bullets).
+  agent: researcher
+
+reporting_task:
+  description: >
+    Using the prior analysis, write a single implementation handoff document for:
+    {task_description}
+    Requirements: use `- [ ] ` checklist items for every step; include a Test plan
+    (npm run lint, npm test, npm run build); include Acceptance criteria; keep it
+    proportional to task size (avoid boilerplate essays). The reader will save output
+    to `.cursor/plans/PLAN.md` and follow it literally.
+  expected_output: >
+    One markdown document suitable as `.cursor/plans/PLAN.md` (no outer code fence).
+  agent: reporting_analyst
