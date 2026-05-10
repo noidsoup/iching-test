@@ -46,5 +46,16 @@
     },
     "namespace": "iching-test",
     "timestamp": 1778438635.336858
+  },
+  {
+    "id": "local_1778441851252",
+    "text": "Session close-out 2026-05-10: chore branch ships oracle UI updates (HexagramPanel, IChingOracle, LineStack), Oracle smoke test tweaks, docs/reference Wilhelm PDF and AI_RUNBOOK note, wiki log. AI baseline efc6594 already on master. Verified lint, test, build.",
+    "metadata": {
+      "source": "mark-where-you-are",
+      "date": "2026-05-10",
+      "branch": "chore/close-out-2026-05-10"
+    },
+    "namespace": "iching-test",
+    "timestamp": 1778441851.2521348
   }
 ]

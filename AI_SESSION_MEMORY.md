@@ -4,6 +4,14 @@ Short rolling log for assistants. Update at session end or after meaningful deci
 
 Import into SimpleMem (optional): `python3 simplemem_cli.py import-ai-session --path AI_SESSION_MEMORY.md`
 
+## [2026-05-10] session close-out | Oracle UI, reference PDF, handoff
+
+- **Branch:** `chore/close-out-2026-05-10` → PR into **`master`** (squash-merge when green).
+- **Ships:** **Vue oracle / line-stack UI** updates (`HexagramPanel`, `IChingOracle`, `LineStack`), **`Oracle.smoke.spec.js`** tweaks, **`AI_RUNBOOK.md`** + **`docs/reference/Wilhelm_The_I_Ching_or_Book_of_Changes_abridged.pdf`** (~530 KB offline Wilhelm abridged; source + copyright note in runbook), wiki **`log.md`** touch-up.
+- **Baseline:** AI refresh already on `master` as `efc6594` (this branch stacks on top).
+- **Verification (pre-push):** `npm run lint`, `npm test`, `npm run build`.
+- **Next (optional):** enable SimpleMem in `.env`; add GitHub Actions when desired.
+
 ## [2026-05-10] AI setup refresh
 
 - Re-ran **“set up project for AI”**: SimpleMem default → **`docs/simplemem/`** (local, committed), updated `.env.example`, added `docs/simplemem/README.md`.

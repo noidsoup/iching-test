@@ -28,12 +28,13 @@ Static **Vue 3** + **Vuetify 3** single-page app that casts and explains **I Chi
 | `eslint.config.js` | ESLint flat config |
 | `iching-test wiki/` | Obsidian-compatible LLM wiki (read `SCHEMA.md` before edits) |
 | `docs/simplemem/` | Committed SimpleMem store (`memories.json`) when using local backend |
+| `docs/reference/` | Offline PDFs; includes Wilhelm *I Ching* (abridged), see note below |
 | `.cursor/context7-libraries.md` | Context7 library IDs for Vue / Vite / Vuetify / Vitest |
 | `.cursor/plans/` | Two-phase implementation plans (`PLAN.md`) |
 | `crewai/` | Optional CrewAI planner that can draft `.cursor/plans/PLAN.md` |
 | `simplemem_client.py`, `simplemem_cli.py` | Cross-session memory (Python) |
 
-There is **no** top-level `docs/` directory today; nothing to migrate into the wiki until you add docs.
+**Wilhelm PDF:** `docs/reference/Wilhelm_The_I_Ching_or_Book_of_Changes_abridged.pdf` — copied from [Labirinto Ermetico](https://www.labirintoermetico.com/09IChing/Wilhelm_R_The_I_Ching_or_Book_of_Changes_(abriged).pdf) for offline use; respect copyright in your jurisdiction.
 
 ## Key workflows
 
