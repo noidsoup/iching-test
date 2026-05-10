@@ -2,7 +2,7 @@
 title: Wiki Log
 type: log
 created: 2026-04-22
-updated: 2026-04-23
+updated: 2026-05-10
 ---
 
 # Wiki Log
@@ -30,3 +30,7 @@ Compiled web research (Wikipedia I Ching article, Cambridge Early China / Shangh
 ## [2026-04-23] ingest | Western counterculture I Ching + Terence McKenna
 
 Added extensive wiki coverage of **1960s–2010s Western reception** (Wilhelm/Jung/Bollingen → Haight/rock/media networks) and **Terence McKenna**’s **novelty theory / Timewave Zero** (La Chorrera origin, King Wen → 384-vector pipeline, **Peter Meyer** software history, **Matthew Watkins** “Objection” / half-twist, variant number sets, 2012 node). Explicit **etic** note: McKenna’s extreme antiquity claims for the King Wen order are **not** mainstream archaeology. Updated `index.md` and new reading-list `guides/` page.
+
+## [2026-05-10] session | AI readiness refresh (no legacy docs/)
+
+Re-applied project AI baseline: SimpleMem store moved to **`docs/simplemem/`** (local, committed), Context7 library table + rule, `.cursor/plans/` notes, optional CrewAI planner under `crewai/`, AGENTS + runbook updates. Repository still has **no** top-level `docs/` markdown corpus — **no** additional wiki ingest from `docs/` (unchanged from 2026-04-22 note).

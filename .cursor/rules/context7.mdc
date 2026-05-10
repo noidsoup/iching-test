@@ -1,0 +1,22 @@
+---
+description: When to use Context7 for up-to-date library documentation
+alwaysApply: false
+---
+
+# Context7 usage
+
+## When to use
+
+- Implementing or debugging **Vue**, **Vite**, **Vuetify**, or **Vitest** behavior where APIs may differ from training data.
+- Verifying migration steps, config keys, or breaking changes.
+
+## How to use
+
+1. Open **`.cursor/context7-libraries.md`** and pick the best **library ID** for the question.
+2. Call Context7 **query-docs** with that ID and a **specific** question (no secrets, no PII, no proprietary code dumps).
+3. Cap at **~3** Context7 calls per assistant turn unless the user explicitly needs more.
+
+## Tips
+
+- Ask narrowly scoped questions (for example: "Vuetify 3 v-dialog persistent prop" not "how do I build an app").
+- Cross-check answers against this repo (`vite.config.js`, `src/`, tests).

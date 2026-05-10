@@ -1,0 +1,50 @@
+[
+  {
+    "id": "local_1778438635332",
+    "text": "AI Session: [2026-05-10] AI setup refresh\n\n- Re-ran **\u201cset up project for AI\u201d**: SimpleMem default \u2192 **`docs/simplemem/`** (local, committed), updated `.env.example`, added `docs/simplemem/README.md`.\n- Added **Context7** mapping (`.cursor/context7-libraries.md`, `.cursor/rules/context7.mdc`) and **`.cursor/plans/`** README for the two-phase workflow.\n- Added optional **CrewAI** planner under `crewai/` (shared `crewai/.venv`, `crewai/planner/` crew writing `.cursor/plans/PLAN.md`; `crewai[tools]` avoided for macOS wheel issues \u2014 use `pip install -e crewai/planner/`).\n- Updated **`AGENTS.md`**, **`AI_RUNBOOK.md`**, `.gitignore` (`crewai` venvs), and wiki log: still **no** top-level `docs/` to ingest.",
+    "metadata": {
+      "source": "ai_session_memory",
+      "date": "2026-05-10",
+      "session_title": "[2026-05-10] AI setup refresh",
+      "session_number": 1
+    },
+    "namespace": "iching-test",
+    "timestamp": 1778438635.332982
+  },
+  {
+    "id": "local_1778438635333",
+    "text": "AI Session: [2026-04-22] AI-ready bootstrap\n\n- Added `AGENTS.md`, `AI_RUNBOOK.md`, SimpleMem stubs, `iching-test wiki/`, and Cursor project rules.\n- No `docs/` directory existed; wiki ingest from legacy docs was skipped (logged in `iching-test wiki/log.md`).",
+    "metadata": {
+      "source": "ai_session_memory",
+      "date": "2026-04-22",
+      "session_title": "[2026-04-22] AI-ready bootstrap",
+      "session_number": 2
+    },
+    "namespace": "iching-test",
+    "timestamp": 1778438635.333857
+  },
+  {
+    "id": "local_1778438635335",
+    "text": "AI Session: [2026-04-22] Stack upgrade\n\n- Migrated from Vue 2 + Webpack 3 + Vuetify 1 + Karma to **Vue 3 + Vite 5 + Vuetify 3 + Vitest**.\n- Hexagram data moved to `src/assets/hexagrams.json`; random selection uses numeric indices on `Object.keys`.\n- Removed unused `face-api.js` dependency.",
+    "metadata": {
+      "source": "ai_session_memory",
+      "date": "2026-04-22",
+      "session_title": "[2026-04-22] Stack upgrade",
+      "session_number": 3
+    },
+    "namespace": "iching-test",
+    "timestamp": 1778438635.3353019
+  },
+  {
+    "id": "local_1778438635336",
+    "text": "AI Session: Next steps (optional)\n\n- Enable SimpleMem in `.env` if cross-session memory is desired.\n- Add CI (lint + test + build) when you introduce GitHub Actions.",
+    "metadata": {
+      "source": "ai_session_memory",
+      "date": "Unknown date",
+      "session_title": "Next steps (optional)",
+      "session_number": 4
+    },
+    "namespace": "iching-test",
+    "timestamp": 1778438635.336858
+  }
+]
