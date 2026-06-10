@@ -56,12 +56,6 @@ Python (SimpleMem CLI): `pip install -r requirements.txt`, then see `.env.exampl
 - Default backend in **`.env.example`**: **local** JSON under **`docs/simplemem/`** (committed). Cloud MCP remains available if you set `SIMPLEMEM_BACKEND=mcp` and a token.
 - Import session file: `python3 simplemem_cli.py import-ai-session --path AI_SESSION_MEMORY.md`
 
-## CrewAI planner (optional)
-
-- Location: **`crewai/`**. Shared venv: `crewai/.venv`; install planner with `pip install -r crewai/requirements.txt` and `pip install -e crewai/planner/`.
-- Run: see **`crewai/README.md`**. Set `PLAN_TASK` to your feature description; output is **`.cursor/plans/PLAN.md`**.
-- Copy **`crewai/planner/.env.example`** → `crewai/planner/.env` and add **`OPENAI_API_KEY`**.
-
 ## Context7 / current docs (libraries)
 
 When behavior of a dependency is unclear, use the **Context7** MCP with library IDs from **`.cursor/context7-libraries.md`** (see **`.cursor/rules/context7.mdc`**). Quick links:

@@ -1,8 +1,6 @@
 .DS_Store
 .env
 __pycache__/
-crewai/.venv/
-crewai/planner/.venv/
 uncommitted/
 node_modules/
 /dist/

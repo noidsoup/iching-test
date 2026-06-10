@@ -8,8 +8,6 @@ export default [
       'dist/**',
       'node_modules/**',
       'iching-test wiki/**',
-      'crewai/.venv/**',
-      'crewai/planner/.venv/**',
     ],
   },
   js.configs.recommended,

@@ -1,4 +1,0 @@
-# Shared virtualenv for CrewAI in this repo: python3 -m venv crewai/.venv
-#   crewai/.venv/bin/pip install -r crewai/requirements.txt
-#   crewai/.venv/bin/pip install -e crewai/planner/
-crewai==1.9.3
