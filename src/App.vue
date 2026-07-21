@@ -18,6 +18,12 @@
           </template>
           <v-list-item-title>Random hexagram</v-list-item-title>
         </v-list-item>
+        <v-list-item @click="tab = 'patterns'">
+          <template #prepend>
+            <v-icon icon="mdi-hexagon-multiple" />
+          </template>
+          <v-list-item-title>Patterns</v-list-item-title>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
 
@@ -31,6 +37,7 @@
         <v-tabs v-model="tab" class="mb-6" color="primary" align-tabs="center">
           <v-tab value="oracle" prepend-icon="mdi-yin-yang">Oracle</v-tab>
           <v-tab value="browse" prepend-icon="mdi-shuffle">Browse</v-tab>
+          <v-tab value="patterns" prepend-icon="mdi-hexagon-multiple">Patterns</v-tab>
         </v-tabs>
 
         <v-window v-model="tab">
@@ -46,6 +53,9 @@
               <HexagramPanel v-if="browseHex" :entry="browseHex" />
             </v-sheet>
           </v-window-item>
+          <v-window-item value="patterns">
+            <PatternsLab :active="tab === 'patterns'" />
+          </v-window-item>
         </v-window>
       </v-container>
     </v-main>
@@ -57,6 +67,7 @@ import { ref, onMounted } from 'vue';
 import { pickRandomHexagram } from '@/hexagrams.js';
 import IChingOracle from '@/components/IChingOracle.vue';
 import HexagramPanel from '@/components/HexagramPanel.vue';
+import PatternsLab from '@/components/patterns/PatternsLab.vue';
 
 const drawer = ref(false);
 const tab = ref('oracle');

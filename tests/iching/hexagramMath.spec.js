@@ -5,6 +5,10 @@ import {
   movingPositions,
   nuclearKeyFromStaticKey,
   inverseKeyFromStaticKey,
+  oppositeKeyFromStaticKey,
+  binaryValueFromKey,
+  keyFromBinaryValue,
+  neighborKeys,
 } from '../../src/iching/hexagramMath.js';
 
 describe('staticKeyFromLines', () => {
@@ -113,6 +117,40 @@ describe('inverseKeyFromStaticKey', () => {
   it('maps 泰 / 否 pair to each other', () => {
     expect(inverseKeyFromStaticKey('111000')).toBe('000111');
     expect(inverseKeyFromStaticKey('000111')).toBe('111000');
+  });
+});
+
+describe('oppositeKeyFromStaticKey', () => {
+  it('flips every bit', () => {
+    expect(oppositeKeyFromStaticKey('111111')).toBe('000000');
+    expect(oppositeKeyFromStaticKey('101010')).toBe('010101');
+  });
+
+  it('is involution', () => {
+    expect(oppositeKeyFromStaticKey(oppositeKeyFromStaticKey('110100'))).toBe('110100');
+  });
+});
+
+describe('binaryValueFromKey / keyFromBinaryValue', () => {
+  it('round-trips 0..63', () => {
+    for (let i = 0; i < 64; i += 1) {
+      expect(binaryValueFromKey(keyFromBinaryValue(i))).toBe(i);
+    }
+  });
+
+  it('reads bottom bit as least significant', () => {
+    expect(binaryValueFromKey('100000')).toBe(1);
+    expect(binaryValueFromKey('000001')).toBe(32);
+  });
+});
+
+describe('neighborKeys', () => {
+  it('returns six Hamming-distance-1 keys', () => {
+    const nbs = neighborKeys('000000');
+    expect(nbs).toHaveLength(6);
+    expect(new Set(nbs).size).toBe(6);
+    expect(nbs).toContain('100000');
+    expect(nbs).toContain('000001');
   });
 });
 

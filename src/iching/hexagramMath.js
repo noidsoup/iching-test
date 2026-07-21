@@ -77,3 +77,67 @@ export function inverseKeyFromStaticKey(staticKey) {
   }
   return staticKey.split('').reverse().join('');
 }
+
+/**
+ * 錯卦 (cuò guà): flip every line (yang ↔ yin).
+ * @param {string} staticKey
+ * @returns {string}
+ */
+export function oppositeKeyFromStaticKey(staticKey) {
+  if (!staticKey || staticKey.length !== 6 || !/^[01]{6}$/.test(staticKey)) {
+    throw new Error('Expected a six-char 0/1 key (bottom index 0).');
+  }
+  return staticKey
+    .split('')
+    .map((ch) => (ch === '1' ? '0' : '1'))
+    .join('');
+}
+
+/**
+ * Integer 0–63 from bottom-first binary key (bit 0 = bottom line).
+ * @param {string} staticKey
+ * @returns {number}
+ */
+export function binaryValueFromKey(staticKey) {
+  if (!staticKey || staticKey.length !== 6 || !/^[01]{6}$/.test(staticKey)) {
+    throw new Error('Expected a six-char 0/1 key (bottom index 0).');
+  }
+  let n = 0;
+  for (let i = 0; i < 6; i += 1) {
+    if (staticKey[i] === '1') n |= 1 << i;
+  }
+  return n;
+}
+
+/**
+ * Bottom-first key from integer 0–63.
+ * @param {number} value
+ * @returns {string}
+ */
+export function keyFromBinaryValue(value) {
+  if (!Number.isInteger(value) || value < 0 || value > 63) {
+    throw new Error('Expected integer 0–63.');
+  }
+  let out = '';
+  for (let i = 0; i < 6; i += 1) {
+    out += (value >> i) & 1 ? '1' : '0';
+  }
+  return out;
+}
+
+/**
+ * Six neighbors obtained by flipping exactly one line.
+ * @param {string} staticKey
+ * @returns {string[]}
+ */
+export function neighborKeys(staticKey) {
+  if (!staticKey || staticKey.length !== 6 || !/^[01]{6}$/.test(staticKey)) {
+    throw new Error('Expected a six-char 0/1 key (bottom index 0).');
+  }
+  const chars = staticKey.split('');
+  return chars.map((_, i) => {
+    const next = chars.slice();
+    next[i] = next[i] === '1' ? '0' : '1';
+    return next.join('');
+  });
+}
