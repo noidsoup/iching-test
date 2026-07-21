@@ -30,4 +30,15 @@ describe('App.vue', () => {
     await flushPromises();
     expect(wrapper.text()).toContain('I Ching: The Book of Changes');
   });
+
+  it('opens Patterns lab with binary lattice', async () => {
+    const wrapper = mountWithVuetify(App);
+    await flushPromises();
+    const patternsTab = wrapper.findAll('.v-tab').find((t) => t.text().includes('Patterns'));
+    expect(patternsTab).toBeTruthy();
+    await patternsTab.trigger('click');
+    await flushPromises();
+    expect(wrapper.text()).toContain('Mathematics of the Changes');
+    expect(wrapper.text()).toContain('Binary lattice');
+  });
 });

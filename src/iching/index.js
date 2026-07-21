@@ -2,6 +2,7 @@ export * from './constants.js';
 export * from './hexagramMath.js';
 export * from './cast.js';
 export * from './table.js';
+export * from './patterns.js';
 export { fourRemainder, yarrowStalkPass, castYarrowStalkLine } from './yarrowStalks.js';
 
 import {
