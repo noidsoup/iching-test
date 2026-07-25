@@ -1,7 +1,7 @@
 [
   {
     "id": "local_1778438635332",
-    "text": "AI Session: [2026-05-10] AI setup refresh\n\n- Re-ran **\u201cset up project for AI\u201d**: SimpleMem default \u2192 **`docs/simplemem/`** (local, committed), updated `.env.example`, added `docs/simplemem/README.md`.\n- Added **Context7** mapping (`.cursor/context7-libraries.md`, `.cursor/rules/context7.mdc`) and **`.cursor/plans/`** README for the two-phase workflow.\n- Added optional **CrewAI** planner under `crewai/` (shared `crewai/.venv`, `crewai/planner/` crew writing `.cursor/plans/PLAN.md`; `crewai[tools]` avoided for macOS wheel issues \u2014 use `pip install -e crewai/planner/`).\n- Updated **`AGENTS.md`**, **`AI_RUNBOOK.md`**, `.gitignore` (`crewai` venvs), and wiki log: still **no** top-level `docs/` to ingest.",
+    "text": "AI Session: [2026-05-10] AI setup refresh\n\n- Re-ran **“set up project for AI”**: SimpleMem default → **`docs/simplemem/`** (local, committed), updated `.env.example`, added `docs/simplemem/README.md`.\n- Added **Context7** mapping (`.cursor/context7-libraries.md`, `.cursor/rules/context7.mdc`) and **`.cursor/plans/`** README for the two-phase workflow.\n- Added optional **Cursor planning** planner under `Cursor planning/` (shared `Cursor planning/.venv`, `Cursor planning/planner/` crew writing `.cursor/plans/PLAN.md`; `Cursor planning[tools]` avoided for macOS wheel issues — use `pip install -e Cursor planning/planner/`).\n- Updated **`AGENTS.md`**, **`AI_RUNBOOK.md`**, `.gitignore` (`Cursor planning` venvs), and wiki log: still **no** top-level `docs/` to ingest.",
     "metadata": {
       "source": "ai_session_memory",
       "date": "2026-05-10",
