@@ -33,7 +33,7 @@ Added extensive wiki coverage of **1960s–2010s Western reception** (Wilhelm/Ju
 
 ## [2026-05-10] session | AI readiness refresh (no legacy docs/)
 
-Re-applied project AI baseline: SimpleMem store moved to **`docs/simplemem/`** (local, committed), Context7 library table + rule, `.cursor/plans/` notes, optional CrewAI planner under `crewai/`, AGENTS + runbook updates. Repository still has **no** top-level `docs/` markdown corpus — **no** additional wiki ingest from `docs/` (unchanged from 2026-04-22 note).
+Re-applied project AI baseline: SimpleMem store moved to **`docs/simplemem/`** (local, committed), Context7 library table + rule, `.cursor/plans/` notes, optional Cursor planning under `Cursor planning/`, AGENTS + runbook updates. Repository still has **no** top-level `docs/` markdown corpus — **no** additional wiki ingest from `docs/` (unchanged from 2026-04-22 note).
 
 ## [2026-05-10] session | Close-out (oracle UI + reference PDF)
 

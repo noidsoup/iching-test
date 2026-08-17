@@ -7,7 +7,6 @@ Import into SimpleMem (optional): `python3 simplemem_cli.py import-ai-session --
 ## [2026-05-10] session close-out | Oracle UI, reference PDF, handoff
 
 - **Merged:** [PR #7](https://github.com/noidsoup/iching-test/pull/7) (squash) → **`master`** at **`49665de`**.
-- **Included:** **Vue oracle / line-stack UI** updates (`HexagramPanel`, `IChingOracle`, `LineStack`), **`Oracle.smoke.spec.js`** tweaks, **`AI_RUNBOOK.md`** + **`docs/reference/Wilhelm_The_I_Ching_or_Book_of_Changes_abridged.pdf`** (~530 KB offline Wilhelm abridged; source + copyright note in runbook), wiki **`log.md`**, SimpleMem **`docs/simplemem/memories.json`**, plus the earlier AI readiness files (Context7, CrewAI stub, `docs/simplemem/`, etc.) that landed in the same integration window.
 - **Verification:** `npm run lint`, `npm test`, `npm run build` before merge.
 - **Next (optional):** enable SimpleMem in `.env`; add GitHub Actions when desired.
 
@@ -15,8 +14,6 @@ Import into SimpleMem (optional): `python3 simplemem_cli.py import-ai-session --
 
 - Re-ran **“set up project for AI”**: SimpleMem default → **`docs/simplemem/`** (local, committed), updated `.env.example`, added `docs/simplemem/README.md`.
 - Added **Context7** mapping (`.cursor/context7-libraries.md`, `.cursor/rules/context7.mdc`) and **`.cursor/plans/`** README for the two-phase workflow.
-- Added optional **CrewAI** planner under `crewai/` (shared `crewai/.venv`, `crewai/planner/` crew writing `.cursor/plans/PLAN.md`; `crewai[tools]` avoided for macOS wheel issues — use `pip install -e crewai/planner/`).
-- Updated **`AGENTS.md`**, **`AI_RUNBOOK.md`**, `.gitignore` (`crewai` venvs), and wiki log: still **no** top-level `docs/` to ingest.
 
 ## [2026-04-22] AI-ready bootstrap
 
