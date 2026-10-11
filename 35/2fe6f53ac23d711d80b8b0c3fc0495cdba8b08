@@ -1,0 +1,41 @@
+.agents/skills/context7/SKILL.md
+  s_06f5346c60fbca::t_812c939299f833 2-3
+.claude/CLAUDE.md
+  s_06f5346c60fbca::t_a4f7b87ac84010 1-2
+.claude/launch.json
+  s_06f5346c60fbca::t_437222d4d743a5 1-14
+.claude/rules/llm-wiki.md
+  s_06f5346c60fbca::t_f1593618f9eb34 3
+.claude/skills/context7
+  s_06f5346c60fbca::t_8a37bbce970d75 1
+.claude/skills/deploy-to-vercel
+  s_06f5346c60fbca::t_1f3ac661a1e3b6 1
+.claude/skills/vercel-cli-with-tokens
+  s_06f5346c60fbca::t_bf098f5b9f4eb9 1
+.claude/skills/web-design-guidelines
+  s_06f5346c60fbca::t_1acd21034bd273 1
+.gitignore
+  s_06f5346c60fbca::t_87cf5f8db966c2 17-20
+.verify.sh
+  s_06f5346c60fbca::t_dd0a3e5e40a076 1-98
+AGENTS.md
+  s_06f5346c60fbca::t_04ff005d6cbe3e 3-4,7,21-22,24,31,42,46,48-51,56,66
+package.json
+  s_06f5346c60fbca::t_5d3fb338e98717 15-16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "352fe6f53ac23d711d80b8b0c3fc0495cdba8b08",
+  "prompts": {},
+  "sessions": {
+    "s_06f5346c60fbca": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5b71ad59-634f-4102-bcc8-fe6290effea6",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "nicholas andrew eymann <thedao@nicholass-Mac-Studio.local>"
+    }
+  }
+}
