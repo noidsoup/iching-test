@@ -1,8 +1,7 @@
 ---
 description: LLM Wiki — read iching-test wiki/SCHEMA.md before any wiki operation
-globs:
+paths:
   - "iching-test wiki/**"
-alwaysApply: false
 ---
 
 # LLM Wiki
