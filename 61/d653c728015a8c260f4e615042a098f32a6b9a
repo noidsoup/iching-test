@@ -1,0 +1,21 @@
+.claude/rules/project-knowledge-lancedb.md
+  s_360218ad6fe612::t_c3c87153f5db8d 22
+scripts/project_knowledge_lancedb_common.py
+  s_360218ad6fe612::t_72ef6f7a7da59b 51,75-79
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "61d653c728015a8c260f4e615042a098f32a6b9a",
+  "prompts": {},
+  "sessions": {
+    "s_360218ad6fe612": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d1687dc1-ca08-47e9-91f6-014bf3cd91cd",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "nicholas andrew eymann <thedao@nicholass-Mac-Studio.local>"
+    }
+  }
+}
