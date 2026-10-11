@@ -1,6 +1,6 @@
 ---
-description: When to use Context7 for up-to-date library documentation
-alwaysApply: false
+name: context7
+description: "Use when implementing or debugging Vue 3, Vite, Vuetify 3 or Vitest behavior where the API may differ from training data, or when checking config keys, migration steps or breaking changes: pick the library ID from .cursor/context7-libraries.md and query Context7."
 ---
 
 # Context7 usage
