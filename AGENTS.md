@@ -21,7 +21,7 @@ Vue 3 single-page app (package name `being`) for the I Ching, with three tabs: *
 - Hexagram keys are six `0`/`1` characters, bottom line first (`1` = yang); line scores are 6/7/8/9, bottom first (`src/iching/hexagramMath.js`).
 - Casting functions take an injectable `random01` (same contract as `Math.random`), so tests stay deterministic (`src/iching/cast.js`).
 - Prefer **Vuetify** primitives for layout and a11y instead of ad-hoc CSS when possible.
-- There is no single verify gate (no .verify.sh, no `npm run verify`). Run **`npm run lint`**, **`npm test`**, and **`npm run build`** before claiming a change is done, and report their real output.
+- Definition of done: **`npm run verify`** (runs `.verify.sh`: `npm run lint`, `npm run test`, `npm run build`; it fails if any of them fails) passes, and you report its real output.
 
 ## Start of session — read first
 
@@ -39,6 +39,7 @@ Vue 3 single-page app (package name `being`) for the I Ching, with three tabs: *
 | Unit tests | `npm test` |
 | Lint | `npm run lint` |
 | Production build | `npm run build` |
+| Verify gate (lint + test + build) | `npm run verify` |
 
 Python (SimpleMem CLI): `pip install -r requirements.txt`, then see `.env.example` and `AI_RUNBOOK.md`.
 
