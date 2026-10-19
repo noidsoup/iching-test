@@ -26,7 +26,7 @@ Static **Vue 3** + **Vuetify 3** single-page app that casts and explains **I Chi
 | `tests/` | Vitest specs (`*.spec.js`) |
 | `vite.config.js` | Vite + Vue + Vuetify + Vitest |
 | `eslint.config.js` | ESLint flat config |
-| `iching-test wiki/` | Obsidian-compatible LLM wiki (read `SCHEMA.md` before edits) |
+| `wiki/` | Project wiki (Obsidian vault): start at `wiki/index.md`, conventions in `wiki/SCHEMA.md` |
 | `docs/simplemem/` | Committed SimpleMem store (`memories.json`) when using local backend |
 | `docs/reference/` | Offline PDFs; includes Wilhelm *I Ching* (abridged), see note below |
 | `.cursor/context7-libraries.md` | Context7 library IDs for Vue / Vite / Vuetify / Vitest |
@@ -39,7 +39,7 @@ Static **Vue 3** + **Vuetify 3** single-page app that casts and explains **I Chi
 
 - **Feature or bugfix:** Read `AGENTS.md` critical patterns → edit `src/` / `tests/` → run verification commands below.
 - **Two-phase planning:** Draft `PLAN.md` (checklist + test plan) directly under `.cursor/plans/`, then implement it in order.
-- **Wiki:** Follow `iching-test wiki/SCHEMA.md`; append session notes to `iching-test wiki/log.md` for significant wiki work.
+- **Wiki:** Follow `wiki/SCHEMA.md`; append session notes to `wiki/log.md` for significant wiki work.
 
 ## Conventions
 
@@ -64,7 +64,7 @@ npm test
 npm run build
 ```
 
-ESLint ignores **`dist/`**, **`node_modules/`**, and **`iching-test wiki/`** so vendored / non-app assets are not linted.
+ESLint ignores **`dist/`**, **`node_modules/`**, and **`wiki/`** so vendored / non-app assets are not linted.
 
 Quick UI smoke: `npm run dev` → open **http://localhost:5173** (default).
 
@@ -85,7 +85,7 @@ Prefer the Context7 MCP and IDs listed in **`.cursor/context7-libraries.md`** in
 
 ## Wiki and session handoff
 
-- **Wiki log:** `iching-test wiki/log.md`
+- **Wiki log:** `wiki/log.md`
 - **Session file:** `AI_SESSION_MEMORY.md`
 
 ## CI / deploy
