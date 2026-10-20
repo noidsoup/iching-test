@@ -7,7 +7,7 @@ export default [
     ignores: [
       'dist/**',
       'node_modules/**',
-      'iching-test wiki/**',
+      'wiki/**',
     ],
   },
   js.configs.recommended,

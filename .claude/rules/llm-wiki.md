@@ -1,17 +1,15 @@
 ---
-description: LLM Wiki — read iching-test wiki/SCHEMA.md before any wiki operation
+description: Project wiki — read wiki/SCHEMA.md before any wiki operation
 paths:
-  - "iching-test wiki/**"
+  - "wiki/**"
 ---
 
-# LLM Wiki
+# Project wiki
 
-This project's Obsidian vault is **`iching-test wiki/`** (repository folder name + space + `wiki`).
+The wiki lives in `wiki/` (an Obsidian vault). Start at `wiki/index.md`.
 
-Before creating, updating, or querying wiki pages, read `iching-test wiki/SCHEMA.md` for conventions.
+Before creating, updating, or querying wiki pages, read `wiki/SCHEMA.md` for conventions.
+Pages use `[[wikilinks]]` and YAML frontmatter. Lint with
+`python3 ~/.claude/skills/closeout/wiki-template/wiki_lint.py .`.
 
-The vault uses `[[wikilinks]]` for all internal links. Every page has YAML frontmatter.
-
-When the user says "ingest", "add to wiki", "lint wiki", or "query wiki", follow the workflows in SCHEMA.md.
-
-After significant work sessions, suggest filing key decisions and learnings into the wiki.
+When the user says "ingest", "add to wiki", "lint wiki", or "query wiki", follow the operations in SCHEMA.md.

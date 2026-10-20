@@ -2,6 +2,9 @@
 
 Claude Code loads this file through `.claude/CLAUDE.md`; project rules are in `.claude/rules/`.
 
+**Project wiki:** read `wiki/index.md` before non-trivial work; open pages it points to only when relevant.
+After a repeated failure, check `wiki/gotchas.md`. Writing to the wiki: follow `wiki/SCHEMA.md`.
+
 ## What this is
 
 Vue 3 single-page app (package name `being`) for the I Ching, with three tabs: **Oracle** (cast a hexagram with three coins, yarrow stalks, or fast yarrow; `src/components/IChingOracle.vue`), **Browse** (one hexagram drawn uniformly at random), and **Patterns** (hexagram-math visualizations; `src/components/patterns/`). Hexagram data: `src/assets/hexagrams.json`. Pure I Ching logic (line scores, keys, casting, lookup) lives in `src/iching/`. Main UI: `src/App.vue`.
@@ -28,7 +31,7 @@ Vue 3 single-page app (package name `being`) for the I Ching, with three tabs: *
 1. **`AI_RUNBOOK.md`** — commands, layout, verification, env vars.
 2. **`AI_SESSION_MEMORY.md`** — recent decisions and next steps (rolling).
 3. Optionally query SimpleMem: `python3 simplemem_cli.py query --question "..."` (requires `.env`).
-4. If you touch the wiki: **`iching-test wiki/SCHEMA.md`** then `iching-test wiki/index.md`. The wiki is mostly I Ching scholarship; `iching-test wiki/entities/being-app-hexagram-data.md` covers the app's data.
+4. Wiki: `wiki/index.md` (pointer above). It is mostly I Ching scholarship; the app pages are `wiki/entities/being-app-hexagram-data.md`, `wiki/concepts/casting-methods.md` and `wiki/entities/patterns-lab.md`.
 
 ## Commands
 
@@ -45,7 +48,7 @@ Python (SimpleMem CLI): `pip install -r requirements.txt`, then see `.env.exampl
 
 ## Rules and skills
 
-- Project rules: `.claude/rules/simplemem.md` is always on; `.claude/rules/llm-wiki.md` loads when you work in `iching-test wiki/`.
+- Project rules: `.claude/rules/simplemem.md` is always on; `.claude/rules/llm-wiki.md` loads when you work in `wiki/`.
 - Global rules live in the user’s **`~/.claude/CLAUDE.md`** and **`~/.claude/rules/`** (not in this repo).
 - Skills are optional workflows; **this file is the primary project map**.
 - Repo skills live in **`.agents/skills/`** and are linked from `.claude/skills/`: `context7` (current library docs), `deploy-to-vercel`, `vercel-cli-with-tokens`, and `web-design-guidelines`. The last three are vendored from `vercel-labs/agent-skills` and pinned in `skills-lock.json`.
@@ -75,4 +78,4 @@ When behavior of a dependency is unclear, use the **Context7** MCP with library 
 
 - No backend API or database in this repo; it is a static front-end + dev server.
 - Do not commit **`.env`**, secrets, or tokens. Use **`.env.example`** only as a template.
-- **Do not** rename the wiki folder: it must stay **`iching-test wiki/`** (repo basename + space + `wiki`).
+- The wiki folder is **`wiki/`** (renamed from `iching-test wiki/` on 2026-10-19 to match the standard layout).
