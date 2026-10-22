@@ -1,0 +1,30 @@
+AGENTS.md
+  s_6ce0bd7b9fff85::t_162e4d39bde97c 47-64,66,68-75
+  s_6ce0bd7b9fff85::t_72beae12f63b8f 8-18
+  s_6ce0bd7b9fff85::t_25bc71d91f9b01 79
+  s_6ce0bd7b9fff85::t_b5d567468d4b59 110-117
+.claude/rules/verify-before-done.md
+  s_6ce0bd7b9fff85::t_dcafe4d5f5ed15 1-25
+.claude/rules/pre-task-retrieval.md
+  s_6ce0bd7b9fff85::t_b971e80ccf5eda 1-27
+.gitignore
+  s_6ce0bd7b9fff85::t_885d53ef270e52 21
+.nvmrc
+  s_6ce0bd7b9fff85::t_a659d37967f211 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "129d10c8bbfb296ec67457c5918bbad174ea2519",
+  "prompts": {},
+  "sessions": {
+    "s_6ce0bd7b9fff85": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4b4acf90-9c77-4448-a59e-50dd53913067",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Nicholas Eymann <nicholas@cooperbold.com>"
+    }
+  }
+}
