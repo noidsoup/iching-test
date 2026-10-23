@@ -1,0 +1,14 @@
+{
+  "origin": {
+    "version": 1,
+    "sessionId": "detected-claude-mvkxchat",
+    "model": "claude",
+    "promptCount": 0,
+    "promptSummary": "",
+    "durationMs": 26,
+    "linesAdded": 6,
+    "linesRemoved": 2,
+    "originUrl": "https://getorigin.io/sessions/detected-claude-mvkxchat",
+    "timestamp": "2026-10-23T12:06:35.696Z"
+  }
+}
